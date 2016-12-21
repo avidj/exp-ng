@@ -11,9 +11,18 @@
     function MenuController($scope, $filter) {
         $scope.menu = '';
         $scope.message = '';
+        $scope.status = 'enjoy';
         $scope.checkMenu = function () {
+            $scope.status = status($scope.menu);
             $scope.message = message($scope.menu);
         };
+
+        function status(menu) {
+            if ( !menu || menu.length == 0 ) {
+                return "invalid";
+            }
+            return "valid";
+        }
 
         function message(menu) {
             if ( !menu || menu.length == 0 ) {

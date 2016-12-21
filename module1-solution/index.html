@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
-      .message { font-size: 1.3em; font-weight: bold; }
+        .message { font-size: 1.3em; font-weight: bold; }
+        .message-valid { color: green; }
+        .message-invalid { color: red; }
+        .lunch-menu-valid { border:1px solid green; }
+        .lunch-menu-invalid { border:1px solid red; }
     </style>
   </head>
 <body ng-controller="MenuController">
@@ -16,7 +20,7 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-             <input id="lunch-menu" type="text"
+             <input class="lunch-menu-{{status}}" id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control"
              ng-model="menu">
@@ -25,7 +29,7 @@
              <button class="btn btn-default" ng-click="checkMenu()">Check If Too Much</button>
          </div>
          <div class="form-group message">
-             {{message}}
+             <div class="message-{{status}}">{{message}}</div>
            <!-- Your message can go here. -->
          </div>
    </div>

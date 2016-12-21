@@ -29,6 +29,7 @@
                 return "Please enter data first";
             }
             var items = menu.split(",");
+            items = items.filter(function(item) { return item.length > 0 });
             var menuIsFine = items.length < 4;
             if ( menuIsFine ) {
                 return "Enjoy!";

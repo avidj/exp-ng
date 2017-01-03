@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app='CounterApp'>
+<head>
+    <meta charset="UTF-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; }</style>
+    <title>ng-repeat</title>
+</head>
+  <body>
+    <h1>The Digest cycle</h1>
+    <div ng-controller='CounterController'>
+        <button ng-click="showNumberOfWatchers()">Log # of Watchers</button>
+        <div>
+            <button ng-click="count()">Increment counter</button>
+        </div>
+        <div>
+            Counter: {{counter}}<br> <!-- yet another -->
+        </div>
+    </div>
+  </body>
+</html>

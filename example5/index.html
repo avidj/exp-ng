@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app='FilterApp'>
+<head>
+    <meta charset="UTF-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; }</style>
+    <title>Dependency Injection in Javascript and AngularJS</title>
+</head>
+  <body>
+    <h1>Expressions and Interpolations</h1>
+    <div ng-controller='FilterController'>
+        Original: {{ sayMessage() }}</br>
+        Holiday: {{ sayHolidayMessage() }}</br>
+        Truth: {{ sayMessage() | truth : "job" : "blabla" }}</br>
+        <div>
+            <button ng-click="switchState()">Switch state of {{name}}</button>
+        </div>
+        <img ng-src="img/david_{{state}}.jpg">
+    </div>
+  </body>
+</html>

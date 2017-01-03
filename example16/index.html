@@ -5,6 +5,7 @@
       <script src="angular.min.js"></script>
       <script src="app.js"></script>
       <title>Custom Service Through a Provider</title>
+      <style>.error { color:red; } </style>
   </head>
   <body>
     <h1>Custom Service Through a Provider</h1>
@@ -19,7 +20,9 @@
                 <button ng-click="list.removeItem($index)">Remove Item</button>
             </li>
         </ol>
-        <div ng-if="list.errorMessage" class="error">Error: {{list.errorMessage}}</div>
+        <div ng-if="list.errorMessage" class="error">ng-if Error: {{list.errorMessage}}</div>
+        <div ng-show="list.errorMessage" class="error">ng-show Error: {{list.errorMessage}}</div>
+        <div ng-hide="!list.errorMessage" class="error">ng-hide Error: {{list.errorMessage}}</div>
     </div>
   </body>
 </html>

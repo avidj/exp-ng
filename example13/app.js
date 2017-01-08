@@ -39,7 +39,7 @@
 
         service.removeItem = function(itemIndex) {
             items.splice(itemIndex, 1);
-        }
+        };
 
         service.getItems = function() {
             return items;

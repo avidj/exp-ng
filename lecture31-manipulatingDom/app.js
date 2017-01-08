@@ -66,6 +66,10 @@
         }
 
         function removeCookieWarning() {
+            // Using angular jqLite
+            // var warningElem = element.find("div");
+            // console.log(warningElem);
+            // warningElem.css('display', 'none');
             var warningElem = element.find("div.error");
             warningElem.slideUp(900);
         }

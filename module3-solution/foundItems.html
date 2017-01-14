@@ -1,0 +1,7 @@
+<ol>
+    <li ng-repeat="item in menu.items">
+        {{ item.quantity }} of {{ item.name }}
+<!--        <button ng-click="menu.onRemove({index: $index});">Remove</button>-->
+    </li>
+</ol>
+<div class="error" ng-if="menu.cookiesInList()">Cookies Detected!</div>

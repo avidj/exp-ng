@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('ChineseMenuChoice', [])
-        .controller('ChineseMenuController', ChineseMenuController)
+        .controller('NarrowItDownController', NarrowItDownController)
         .service('MenuSearchService', MenuSearchService)
         .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
         .directive('foundItems', FoundItemsDirective);
@@ -26,8 +26,8 @@
 
     }
 
-    ChineseMenuController.$inject = [ 'MenuSearchService' ];
-    function ChineseMenuController(MenuSearchService) {
+    NarrowItDownController.$inject = [ 'MenuSearchService' ];
+    function NarrowItDownController(MenuSearchService) {
         var menu = this;
         menu.searchTerm = "";
 

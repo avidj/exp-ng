@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="styles/styles.css">
   </head>
 <body>
-   <div class="container" ng-controller="ChineseMenuController as menu">
+   <div class="container" ng-controller="NarrowItDownController as menu">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -20,7 +20,7 @@
       <button class="btn btn-primary" ng-click="menu.narrowItDown();">Narrow It Down For Me!</button>
     </div>
 
-    <div>
+    <div class="jumbotron">
        <found-items
                items="menu.found"
                on-remove="menu.removeItem(index)">

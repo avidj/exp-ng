@@ -1,0 +1,9 @@
+<ol class="list">
+    <li ng-repeat="item in items" class="itemList" ng-class-even="'itemListEvenBackground'">
+        {{item.name}} ({{item.short_name}})
+        <button class="btn delete" ng-click="onRemove({index: $index});">Don't want this one!</button>
+        <div class="row">
+            <span class="description">{{item.description}}</span>
+        </div>
+    </li>
+</ol>

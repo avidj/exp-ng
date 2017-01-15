@@ -1,7 +1,14 @@
 <ol>
+    <div ng-if="menu.items.length === 0" class="emptyMessage">Nothing found.</div>
+    <ul ng-if="menu.items.length > 0">
+        <li ng-repeat="item in menu.items">
+            ({{ item.short_name }}) {{ item.name }}: {{ item.description }}
+            <button class="btn" ng-click="menu.removeItem($index);">Don't want this one!</button>
+        </li>
+    </ul>
+
+    <!--
     <li ng-repeat="item in menu.items">
         {{ item.quantity }} of {{ item.name }}
 <!--        <button ng-click="menu.onRemove({index: $index});">Remove</button>-->
-    </li>
 </ol>
-<div class="error" ng-if="menu.cookiesInList()">Cookies Detected!</div>

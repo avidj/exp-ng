@@ -10,33 +10,24 @@
     function FoundItemsDirective() {
         var ddo = {
             templateUrl: 'foundItems.html',
-            /*
-             scope: {
-             items: '<',
-             myTitle: '@title',
-             onRemove: '&'
-             },
-             controller: FoundItemsDirectiveController,
-             controllerAs: 'menu',
-             bindToController: true
-             */
+            scope: {
+              items: '<',
+              onRemove: '&'
+            },
+            controller: FoundItemsDirectiveController,
+            controllerAs: 'menu',
+            bindToController: true
+
         };
-        /*
-         var ddo = {
-         templateUrl: 'foundItems.html',
-         scope: {
-         foundItems: '<',
-         //                myTitle: '@title',
-         onRemove: '&'
-         },
-         controller: FoundItemsDirectiveController,
-         controllerAs: 'menu',
-         bindToController: true,
-         //            link: ShoppingListDirectiveLink,
-         //            transclude: true
-         };
-         */
         return ddo;
+    }
+
+    function FoundItemsDirectiveController() {
+        var menu = this;
+
+        menu.removeItem = function(index) {
+
+        }
     }
 
     ChineseMenuController.$inject = [ 'MenuSearchService' ];

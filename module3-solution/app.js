@@ -57,8 +57,11 @@
             var menuItemsPromise = service.getMenuItems();
             return menuItemsPromise
                 .then(function(response) {
-                    var items = response.data.menu_items;
                     var found = [];
+                    if ( searchTerm.trim().length === 0 ) {
+                        return found;
+                    }
+                    var items = response.data.menu_items;
                     for ( var i = 0; i < items.length; i++ ) {
                         if ( items[i].description.toLowerCase().indexOf(searchTerm) !== -1 ) {
                             found.push(items[i]);

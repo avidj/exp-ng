@@ -17,7 +17,6 @@
             controller: FoundItemsDirectiveController,
             controllerAs: 'menu',
             bindToController: true
-
         };
         return ddo;
     }
@@ -25,16 +24,12 @@
     function FoundItemsDirectiveController() {
         var menu = this;
 
-        menu.removeItem = function(index) {
-
-        }
     }
 
     ChineseMenuController.$inject = [ 'MenuSearchService' ];
     function ChineseMenuController(MenuSearchService) {
         var menu = this;
         menu.searchTerm = "";
-        menu.items = [];
 
         menu.narrowItDown = function() {
             var menuItemsPromise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
@@ -46,6 +41,10 @@
                     console.log(error);
                 });
         };
+
+        menu.removeItem = function(index) {
+            menu.found.splice(index, 1);
+        }
     }
 
     MenuSearchService.$inject = [ '$http', 'ApiBasePath' ];

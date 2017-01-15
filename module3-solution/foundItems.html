@@ -3,12 +3,7 @@
     <ul ng-if="menu.items.length > 0">
         <li ng-repeat="item in menu.items">
             ({{ item.short_name }}) {{ item.name }}: {{ item.description }}
-            <button class="btn" ng-click="menu.removeItem($index);">Don't want this one!</button>
+            <button class="btn" ng-click="menu.onRemove({index: $index});">Don't want this one!</button>
         </li>
     </ul>
-
-    <!--
-    <li ng-repeat="item in menu.items">
-        {{ item.quantity }} of {{ item.name }}
-<!--        <button ng-click="menu.onRemove({index: $index});">Remove</button>-->
 </ol>
